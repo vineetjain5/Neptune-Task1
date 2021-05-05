@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { WorkComponent } from './components/work/work.component';
@@ -15,6 +17,8 @@ import { IconStackComponent } from './components/work/icon-stack/icon-stack.comp
 import { OtherStuffComponent } from './components/work/other-stuff/other-stuff.component';
 import { WorkTimelineComponent } from './components/work/work-timeline/work-timeline.component';
 import { ExperienceComponent } from './components/work/experience/experience.component';
+import { VineetComponent } from './components/vineet/vineet.component';
+import { DataServiceService } from './service/data-service.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +33,10 @@ import { ExperienceComponent } from './components/work/experience/experience.com
     OtherStuffComponent,
     WorkTimelineComponent,
     ExperienceComponent,
+    VineetComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FontAwesomeModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FontAwesomeModule, NgMultiSelectDropDownModule.forRoot(),FormsModule],
+  providers: [DataServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

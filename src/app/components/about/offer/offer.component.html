@@ -18,47 +18,27 @@
     >
       <span class="mt-2 ml-2 mr-2">
         I have been developing high quality web applications since
-        <b>X+ years</b>. I specialize in various Frontend technologies.
+        <b>{{yoe + " "+"years"}}</b>. I specialize in various Frontend technologies.
       </span>
       <span class="mt-4 ml-2 mr-2">
         My Current technology stack includes
-        <b>Javascript, Typescript, Angular, NodeJS</b> and various other
+        <b *ngFor = "let skill of this.selectedItems">{{skill.item_text + ","}}</b> and various other
         frameworks and libraries related to them.
       </span>
 
-      <span class="mt-4 ml-2 mr-2">
+      <span class="mt-4 ml-2 mr-2" *ngIf="!this.isSwitched">
         I can help you with multiple areas of projects:
       </span>
 
       <div
-        class="d-flex mt-2 ml-2 mr-2 p-4 mb-2 bg-primary-light border-secondary"
+        class="d-flex mt-2 ml-2 mr-2 p-4 mb-2 bg-primary-light border-secondary" *ngIf="!this.isSwitched"
       >
         <div class="flex-column font-weight-bold text-white">
-          <div class="d-flex align-items-center">
-            <span>{{ "{}" }}</span>
+          <div class="d-flex align-items-center" *ngFor = "let pro of this.addedproject">
             <span class="ml-3"
-              >Developing/Co-developing frontend </span
+              >{{"*"+" " +pro.str | uppercase }} </span
             >
-          </div>
-          <div class="d-flex mt-3 align-items-center">
-            <span>{{ "{}" }}</span>
-            <span class="ml-3">Efficient and readable code implementation</span>
-          </div>
-          <div class="d-flex mt-3 align-items-center">
-            <span>{{ "{}" }}</span>
-            <span class="ml-3">Good UI/UX design</span>
-          </div>
-          <div class="d-flex mt-3 align-items-center">
-            <span>{{ "{}" }}</span>
-            <span class="ml-3">Researching new techs and frameworks</span>
-          </div>
-          <div class="d-flex mt-3 align-items-center">
-            <span>{{ "{}" }}</span>
-            <span class="ml-3">Launching and maintaining project</span>
-          </div>
-          <div class="d-flex mt-3 align-items-center">
-            <span>{{ "{}" }}</span>
-            <span class="ml-3">Estimating tasks and helping with CI/CD</span>
+            <br>
           </div>
         </div>
       </div>
